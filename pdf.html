@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Summarizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #leftPane {
+            background-color: #4cb3c0a7;
+            box-sizing: content-box;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            height: 100vh;
+            width: 70px;
+        }
+
+        #mainContent {
+            flex: 1;
+            padding: 10px;
+            width: calc(100% - 70px);
+            display: flex;
+            align-items: stretch;
+        }
+
+        .box {
+            background-color: #ffffff;
+            padding: 11px;
+            box-sizing: border-box;
+            flex: 1;
+            margin: 0 10px 20px 0;
+        }
+
+        button {
+            color: #25a399;
+            padding: 15px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            display: flex;
+            align-items: left;
+        }
+
+        button:hover {
+            background-color: #ac8d8d;
+        }
+
+        form {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        textarea {
+            width: calc(100% - 22px);
+            height: 40vh;
+            padding: 1px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            background-color: #a5d9e08a;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #27ae5f9f;
+        }
+
+        #microphoneButton, #translateButton, #logout, #profileButton {
+            margin-top: 10px;
+        }
+
+        #logout {
+            background-color: #c22700;
+            padding: 15px;
+            margin: 5px;
+        }
+
+        #profileButton {
+            background-color: #3498db;
+            padding: 15px;
+            margin: 5px;
+            position: relative;
+        }
+
+        #profileDropdown {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+
+        #profileDropdown a {
+            padding: 12px;
+            text-decoration: none;
+            display: block;
+            color: #333;
+        }
+
+        #profileDropdown a:hover {
+            background-color: #f0f0f0;
+        }
+
+        #profileButton:hover #profileDropdown {
+            display: block;
+        }
+
+        #logout:hover {
+            background-color: #c0392b;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media only screen and (max-width: 600px) {
+            #mainContent {
+                flex-direction: column;
+            }
+
+            .box {
+                width: calc(100% - 20px);
+                margin: auto;
+                padding: 10px;
+            }
+
+            textarea {
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="leftPane">
+        <button title="Text Summarizer"><i class="fas fa-file-alt"></i></button>
+        <button title="PDF Summarizer"><i class="fas fa-file-pdf"></i></button>
+        <button id="microphoneButton" title="Microphone"><i class="fas fa-microphone"></i></button>
+        <button id="translateButton" title="Translate"><i class="fas fa-language"></i></button>
+        <div id="profileButton" title="Profile">
+            <i class="fas fa-user"></i>
+            <div id="profileDropdown">
+                <a href="#">History</a>
+                <a href="#">Feedback</a>
+            </div>
+        </div>
+        <form action="welcome" method="post">
+            <button id="logout" title="Logout"><i class="fas fa-sign-out-alt"></i></button>
+        </form>
+    </div>
+
+    <div id="mainContent">
+        <div class="box">
+            <h3>PDF Summarizer</h3>
+            <label for="pdfInput">Upload PDF:</label>
+            <input type="file" id="pdfInput" accept=".pdf">
+            <br>
+            <br>
+            <label for="pageNumber">Enter Page Number:</label>
+    <input type="number" id="pageNumber" min="1" value="1">
+    
+    <button type="submit" onclick="summarizePDF()"><i class="fas fa-check"></i> Summarize</button>
+        </div>
+        <div class="box" style="padding-top:15px;">
+            <h3>Summarized PDF</h3>
+            <label>Output</label>
+            <textarea id="pdfOutput" rows="4" cols="30" readonly></textarea>
+        </div>
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+    <script>
+        // Function to handle PDF summarization
+        function summarizePDF() {
+            // Implement backend logic to process the PDF and return the summary
+            alert('PDF summarization logic goes here');
+        }
+
+        // Your JavaScript code for microphone, translation, and profile buttons
+        document.getElementById('microphoneButton').addEventListener('click', function () {
+            // Add your microphone functionality here
+            alert('Microphone button clicked!');
+        });
+
+        document.getElementById('translateButton').addEventListener('click', function () {
+            // Add your translation functionality here
+            alert('Translate button clicked!');
+        });
+
+        document.getElementById('profileButton').addEventListener('click', function () {
+            // Add your profile functionality here
+            alert('Profile button clicked!');
+        });
+        function summarizePDF() {
+            // Get the selected file
+            var fileInput = document.getElementById('pdfInput');
+            var file = fileInput.files[0];
+        
+            // Get the entered page number
+            var pageNumber = document.getElementById('pageNumber').value;
+        
+            // Implement backend logic to process the PDF and return the summary for the specified page
+            // You need to send both the file and page number to the backend
+            alert('PDF summarization logic for page ' + pageNumber + ' goes here');
+        }
+    </script>
+</body>
+</html>

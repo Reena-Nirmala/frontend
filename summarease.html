@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarizer</title>
+    <!-- Add Font Awesome link (make sure to include this in your project) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="summarease.css">
+</head>
+<body>
+    <div id="leftPane">
+        <button title="Text Summarizer"><i class="fas fa-file-alt"></i></button>
+        <button title="PDF Summarizer"><i class="fas fa-file-pdf"></i></button>
+        <!-- <button id="microphoneButton" title="Microphone"><i class="fas fa-microphone"></i></button>
+        <button id="translateButton" title="Translate"><i class="fas fa-language"></i></button> -->
+        <div id="profileButton" title="Profile">
+            <i class="fas fa-user"></i>
+            <div id="profileDropdown">
+                <a href="#">History</a>
+                <a href="#">Feedback</a>
+            </div>
+        </div>
+        <form action="welcome" method="post">
+            <button id="logout" title="Logout"><i class="fas fa-sign-out-alt"></i></button>
+        </form>
+    </div>
+    
+    <div id="mainContent">
+        <div class="box">
+            <div class="linesContainer">
+                <label id="lineLengthLabel" for="lineLengthSlider">Lines to be Summarized:</label>
+                <!-- Container for slider and labels -->
+                <div id="lineLengthSliderContainer">
+                    <!-- Label for minimum value -->
+                    <span id="minLabel">10</span>
+                    <!-- Added input type range for slider -->
+                    <input type="range" id="lineLengthSlider" name="line_length" value="80" min="10" max="100">
+                    <!-- Label for maximum value -->
+                    <span id="maxLabel">100</span>
+                </div>
+            </div>
+            <h3>Text Summarizer</h3>
+            <label for="userInput">Enter Text:</label>
+            <textarea id="userInput" name="user_input" rows="4" cols="30" required></textarea>
+            <button type="submit"><i class="fas fa-check"></i> Summarize</button>
+        </div>
+        
+            
+        
+        <div class="box" style="padding-top:58px;">
+            <h3>Summarizedtext</h3>
+
+            <label>Output</label>
+            <textarea id="userInput" name="user_input" rows="4" cols="30"></textarea>
+            <button id="microphoneButton" title="Microphone"><i class="fas fa-microphone"></i></button>
+            <button id="translateButton" title="Translate" style="margin-top: -48px; margin-left:50px;"><i class="fas fa-language"></i></button>
+       
+        </div>
+        
+        
+    </div>
+        
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+    <script>
+        // Your JavaScript code for microphone, translation, and profile buttons
+        document.getElementById('microphoneButton').addEventListener('click', function () {
+            // Add your microphone functionality here
+            alert('Microphone button clicked!');
+        });
+
+        document.getElementById('translateButton').addEventListener('click', function () {
+            // Add your translation functionality here
+            alert('Translate button clicked!');
+        });
+
+        document.getElementById('profileButton').addEventListener('click', function () {
+            // Add your profile functionality here
+            alert('Profile button clicked!');
+        });
+    </script>
+</body>
+</html>

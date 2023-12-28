@@ -1,0 +1,174 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line on small screens */
+}
+
+#leftPane {
+    background-color: #4cb3c0a7;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    height: 100vh; /* Full height of the viewport */
+    width: 70px;
+}
+
+#mainContent {
+    flex: 1;
+    padding: 10px;
+    width: calc(100% - 70px); /* Adjusted width for the main content */
+    display: flex;
+    align-items: stretch;
+}
+
+.box {
+    background-color: #ffffff;
+    padding: 15px;
+    box-sizing: border-box;
+    flex: 1;
+    margin: 0 10px 20px 0; /* Added margin between boxes */
+}
+
+h1 {
+    color: #0a4b50;
+    text-align: center;
+    padding: 10px;
+}
+
+button {
+   
+    color: #1c6b65;
+    padding: 15px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+button:hover {
+    /* background-color: #8edbd7; */
+}
+
+form {
+    margin-top: 10px;
+    text-align: center;
+}
+
+label, textarea {
+    display: block;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: calc(100% - 22px);
+    height: 40vh; /* 40% of the viewport height */
+    padding: 1px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #81d3d3;
+}
+
+button[type="submit"]:hover {
+    background-color: #4cb3ad;
+}
+
+#microphoneButton, #translateButton, #logout, #profileButton {
+    margin-top: 10px;
+}
+
+#logout {
+    padding: 25px;
+    margin: 5px;
+}
+
+#profileButton {
+    background-color: #3498db;
+    padding: 15px;
+    margin: 5px;
+    position: relative; /* Added relative positioning */
+}
+
+#profileDropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+#profileDropdown a {
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+    color: #333;
+}
+
+#profileDropdown a:hover {
+    background-color: #f0f0f0;
+}
+
+#profileButton:hover #profileDropdown {
+    display: block;
+}
+
+#logout:hover {
+    background-color: #c0392b;
+}
+
+/* Styles for Number of Lines section */
+.linesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: left; /* Adjusted alignment to left */
+    margin-bottom: 10px;
+}
+
+#lineLengthLabel {
+    margin-bottom: 5px;
+}
+
+#lineLengthSliderContainer {
+    display: flex;
+    align-items: center;
+}
+
+#minLabel, #maxLabel {
+    margin: 0 10px;
+}
+
+/* Media Queries for Responsive Design */
+@media only screen and (max-width: 600px) {
+    #mainContent {
+        flex-direction: column; /* Change to column layout on small screens */
+    }
+
+    .box {
+        width: calc(100% - 20px); /* Full width on small screens */
+        margin: auto;
+    }
+
+    .linesContainer {
+        width: 100%;
+    }
+
+    textarea {
+        width: calc(100% - 20px);
+    }
+}
+
+#buttons{
+   
+    
+}
