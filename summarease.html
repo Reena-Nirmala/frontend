@@ -10,20 +10,71 @@
 </head>
 <body>
     <div id="leftPane">
-        <button title="Text Summarizer"><i class="fas fa-file-alt"></i></button>
-        <button title="PDF Summarizer"><i class="fas fa-file-pdf"></i></button>
+        <a href="summarease.html">
+        <button title="Text Summarizer">
+            <div>
+                
+            <i class="fas fa-file-alt"></i>
+            <h4>Text Summarizer</h4>
+
+            </div>
+        </button></a>
+            <a href="pdf.html">
+        <button title="PDF Summarizer">
+            <div>
+            <i class="fas fa-file-pdf"></i>
+            <h4>Pdf Summarizer</h4>
+            </div>
+        </button>
+        </a>
+        <button title="Grammar Checker">
+            <div>
+            <i class="fa fa-code"></i>
+            <h4>Grammar Checker</h4>
+            </div>
+        </button>
         <!-- <button id="microphoneButton" title="Microphone"><i class="fas fa-microphone"></i></button>
         <button id="translateButton" title="Translate"><i class="fas fa-language"></i></button> -->
+        <!-- <div id="profileButton" title="Profile" >
+            <button ><i class="fas fa-user" style="padding:1px 14px"></i></button> 
+            <div id="profileDropdown">
+                <a href="#">History</a>
+                <a href="#">Feedback</a> 
+                <a href="home.html">Logout</a>
+            </div>
+            
+        </div> -->
         <div id="profileButton" title="Profile">
-            <i class="fas fa-user"></i>
+            <button onclick="toggleDropdown()">
+                <i class="fas fa-user" style="padding: 1px 14px"></i>
+            </button>
             <div id="profileDropdown">
                 <a href="#">History</a>
                 <a href="#">Feedback</a>
+                <a href="home.html">Logout</a>
             </div>
         </div>
-        <form action="welcome" method="post">
-            <button id="logout" title="Logout"><i class="fas fa-sign-out-alt"></i></button>
-        </form>
+        
+        <script>
+            function toggleDropdown() {
+                var dropdown = document.getElementById("profileDropdown");
+                dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+            }
+        
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+                if (!event.target.matches('#profileButton button')) {
+                    var dropdown = document.getElementById("profileDropdown");
+                    if (dropdown.style.display === "block") {
+                        dropdown.style.display = "none";
+                    }
+                }
+            }
+        </script>
+        
+        <!-- <button name="submit" id="logout"><a href="home.html" ><i class="fas fa-sign-out-alt"></i></a></button> -->
+            
+       
     </div>
     
     <div id="mainContent">
@@ -50,7 +101,6 @@
         
         <div class="box" style="padding-top:58px;">
             <h3>Summarizedtext</h3>
-
             <label>Output</label>
             <textarea id="userInput" name="user_input" rows="4" cols="30"></textarea>
             <button id="microphoneButton" title="Microphone"><i class="fas fa-microphone"></i></button>
