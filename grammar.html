@@ -7,42 +7,37 @@
     <!-- Add Font Awesome link (make sure to include this in your project) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="summarease.css">
+    <link rel="stylesheet" href="grammar.css">
 </head>
 <body>
-    <div id="leftPane" class="sidebar" data-target=".navbar" data-offset="60">
+    <div id="leftPane" class="sidebar" onclick="toggleLeftPane()">
         <!-- <a href="summarease.html"> -->  
-            <nav class="navbar">
-                <div class="container">
-                    <!-- <div class="navbar-header"> -->
-                        <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button> -->
-                    <!-- </div> -->
-                
-            <div class="collapse navbar-collapse" id="myNavbar">
             <header><h3>SummarEase</h3></header>
-            <ul class="nav navbar-nav navbar-right">
-            <li><i class="fas fa-file-alt icon"></i><a href="summarease.html">Text Summarizer</a></li>
+            <ul>
+            <li ><a href="summarease.html"><i class="fas fa-file-alt icon"></i> Text Summarizer</a></li>
 
-            <li><i class="fas fa-file-pdf icon"></i><a href="pdf1.html">PdfSummarizer</a></li>
+            <!-- <a href="pdf.html"> -->
+        <!-- <button title="PDF Summarizer">
+            <div> -->
+            <li><a href="pdf1.html"><i class="fas fa-file-pdf icon"></i> PdfSummarizer</a></li>
+            <!-- <h4>Pdf Summarizer</h4>
+            </div> -->
+        <!-- </button> -->
+        <!-- </a>
+        <button title="Grammar Checker">
+            <div> -->
+            <li><a href="grammar.html"><i class="fas fa-code icon"></i> GrammarChecker</a></li>
+            
            
-            <li><i class="fas fa-code icon"></i><a href="grammar.html">GrammarChecker</a></li>
-            <li><i class="fas fa-user icon"></i><a href="profile.html" >Profile</a></li>
+                <!-- <li><a href="home.html"><i class="fas fa-user icon"></i> home</a></li> -->
+                <li><a href="profile.html" ><i class="fas fa-user icon"></i> Profile</a></li>
 
-
-            <li><i class="fas fa-sign-out-alt icon"></i><a href="home.html" >Logout</a></li>
+            <li></i><a href="home.html" ><i class="fas fa-sign-out-alt icon"></i> Logout</a></li>
                 
             
-             </ul>
+        </ul>
         </div>
-        </div>
-        </nav>
         
         <!-- <button name="submit" id="logout"><a href="home.html" ><i class="fas fa-sign-out-alt"></i></a></button> -->
             
@@ -50,39 +45,19 @@
     </div>
     
     <div id="mainContent">
-        <div class="top">
-            <div class="linesContainer">
-                <!-- <label id="lineLengthLabel" for="lineLengthSlider">Lines to be Summarized:</label> -->
-                <!-- Container for slider and labels -->
-                <div >
-                    <!-- Label for minimum value -->
-                    <p id="minLabel">Short</p>
-                    
-                    <!-- Added input type range for slider -->
-                    <input type="range" id="lineLengthSlider" name="line_length" value="30" min="10" max="100">
-                    <!-- Label for maximum value -->
-                    <p id="maxLabel">Long</p>
-                    <div id="but">
-                        <button id="deletebutton" title="Delete" onclick="deleteOutput()" style="display: none;"><i class="fas fa-trash-alt larger-icon"></i></button>
-                      <div class="ico"><button id="microphonebutton" title="Microphone"><i class="fas fa-microphone larger-icon"></i></button>
-                        <button id="translatebutton" title="Translate" ><i class="fas fa-language larger-icon"></i></button></div>
-                    </div>
-                </div>
-                
-            </div>
-            </div>
+        
             <div class="main">
         <div class="left">
             <!-- <label for="inputText">Enter Text:</label> -->
-            <textarea ondragstart="return false;" id="inputText" type="text" name="user_input" rows="4" cols="30" required></textarea>
+            <textarea ondragstart="return false;" id="inputText" type="text" name="user_input" placeholder="Enter sentences to check and correct" rows="4" cols="30" required style="padding:10px;"></textarea>
             <!-- <textarea id="userInput" oninput="resizeTextbox()"></textarea> -->
             <!-- <button type="submit"><i class="fas fa-check"></i> </button> -->
-            <button id="button" onclick="processText()" >Summarize</button>
+            <button id="button" onclick="processText()" >Check</button>
         </div>
         <!-- <hr style="height: 90%; border: 0; border-left: 1px solid #ed0909; margin: 0 10px;"> -->
         <div class="right">
             <!-- <label>Output</label> -->
-                <div id="output">
+                <div id="output" >
                 <!-- <textarea id="output" readonly></textarea> -->
                 </div>
             <!-- <div id="but" >
@@ -99,12 +74,6 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
     <script>
-
-
-        function closeNavbar() {
-            // Close the navbar when an item is clicked
-            $('.navbar-toggle').click();
-        }
         // Your JavaScript code for microphone, translation, and profile buttons
         document.getElementById('microphoneButton').addEventListener('click', function () {
             // Add your microphone functionality here

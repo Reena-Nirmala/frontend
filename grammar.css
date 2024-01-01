@@ -32,19 +32,19 @@ body{
 }
 
 
-/* #leftPane {
+#leftPane {
     background-color: #ffffff;
     box-sizing: content-box;
-    /* display: flex; 
-    height: 100%;
+    /* display: flex; */
+    height: 100%; /* Full height of the viewport */
     width: 220px;
     position: fixed;
     float: left;
-    /* flex: 0 0 200px; 
+    /* flex: 0 0 200px; */
     transition: 0.5s;
-    /* margin-left: -10px; 
+    /* margin-left: -10px; */
     box-shadow: 0px 1px 10px rgba(41, 39, 39, 0.629);
-} */
+}
 .sidebar header{
     text-align: center;
     background-color: #f2f2f2;
@@ -54,84 +54,19 @@ body{
     box-shadow: 0px 1px 10px rgba(41, 39, 39, 0.629);
 
 }
-
-.navbar {
-    
-    /* position: fixed;
-    top: 0;
-    left: -250px;
-    width: 250px;
-    height: 100vh;
-    transition: 0.5s;
-    z-index: 1; */
-    background-color: #ffffff;
-    box-sizing: content-box;
-    /* display: flex; */
-    height: 100%; /* Full height of the viewport */
-    width: 220px;
-    position: fixed;
-    float: left;
-    /* flex: 0 0 200px; */
-    /* transition: 0.5s; */
-    /* margin-left: -10px; */
-    box-shadow: 0px 1px 10px rgba(41, 39, 39, 0.629);
-}
-
-.navbar:hover {
-    left: 0;
-}
-
-.navbar-header {
-    padding: 15px;
-    <!-- background-color: #2c3e50; -->
-}
-
-.navbar-nav {
-    margin-top: 20px;
-    display: flex;
-    left: -250px;
-    width: 250px;
-
-    flex-direction: column; /* Stack items vertically */
-}
-.navbar-nav li {
-    text-align: left;
-    padding: 10px;
-    /* transition: background-color 0.3s; */
-    left: -250px;
-    width: 200px;
-
-}
-
-.navbar-nav li:hover {
-    <!-- background-color: #3d566e; -->
-    
-
-}
-
-.navbar-nav li a {
-    color: #00453f;
-    text-decoration: none;
-    left: -600px;
-    <!-- width: 150px; -->
-
-}
-
-.navbar-nav li.active {
-    background-color: #3d566e;
-    left: -250px;
-    width: 250px;
-
-}
 *{
     text-decoration: none;
     list-style: none;
 }
 
-
-.sidebar ul li{
+/* .sidebar ul {
+    box-shadow: 0px 1px 10px rgba(41, 39, 39, 0.1);
+    
+    
+} */
+.sidebar ul a{
     /* text-align: center; */
-    /* display: block; */
+    display: block;
     height: 100%;
     width: 100%;
     line-height: 75px;
@@ -139,15 +74,10 @@ body{
     color: rgb(4, 84, 97);
     box-sizing: border-box;
     transition: .6s;
-    /* padding: 6%; */
+    
     
     /* border-top: 1px solid #064a698c;
     border-bottom: 1px solid rgba(8, 63, 87, 0.612); */
-}
-
-
-.sidebar li a{
-    /* display: none; */
 }
 /* .sidebar ul{
     flex: 1;
@@ -202,7 +132,6 @@ ul li:hover a{
     background-color: #ffffff;
     padding: 10px;
     margin-left: 10px;
-    margin-right: 1px;
     /*transition: flex 0.5s;  Smooth transition for width change */
   }
 
@@ -215,8 +144,7 @@ ul li:hover a{
     margin-top: 1%;
     margin-bottom: 5%;
     border-radius: 5px;
-    margin-right:10px;
-    margin-left:10px;
+    margin-right:20px;
   }
 /* .box {
     background-color: #fbeded;
@@ -311,10 +239,6 @@ button[type="submit"]:hover {
     float: right;
     display: flex;
     margin-right:-70%;
-    
-}
-.navbar-toggle {
-    /* color: #000000 !important; */
     
 }
 #but{
@@ -412,11 +336,11 @@ button[type="submit"]:hover {
 /* Media Queries for Responsive Design */
 @media only screen and (max-width: 600px) {
     #mainContent {
-        flex-direction: column; Change to column layout on small screens 
+        flex-direction: column; /* Change to column layout on small screens */
     }
 
     .box {
-        width: calc(100% - 20px); Full width on small screens 
+        width: calc(100% - 20px); /* Full width on small screens */
         margin: auto;
     }
 
@@ -428,37 +352,4 @@ button[type="submit"]:hover {
         width: calc(100% - 20px);
     }
 }
-@media (max-width: 768px) {
-            .navbar {
-                width: 100%;
-                left: -95%;
-            }
-
-            .navbar:hover {
-                left: 0;
-            }
-            .navbar-header{
-                padding: 1px;
-            }
-            .navbar-nav{
-                margin-top: 10px;
-                display: flex;
-                transition: background-color 0.3s;
-            left: -50px;
-            width: 200px;
-            }
-            .navbar-nav li a {
-                color: #663c3c;
-                text-decoration: none;
-                left: -10px;
-                <!-- width: 150px; -->
-    
-            }
-            .navbar-nav li.active {
-                background-color: #3d566e;
-                left: -50px;
-                width: 40px;
-    
-            }
-        }
 

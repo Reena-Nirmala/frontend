@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .navbar {
+            background-color: #3498db;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100vh;
+            transition: 0.5s;
+            z-index: 1;
+        }
+        
+        .navbar:hover {
+            left: 0;
+        }
+        
+        .navbar-header {
+            padding: 15px;
+            <!-- background-color: #2c3e50; -->
+        }
+        
+        .navbar-nav {
+            margin-top: 20px;
+            display: flex;
+            left: -250px;
+            width: 250px;
+
+            flex-direction: column; /* Stack items vertically */
+        }
+        
+        .navbar-nav li {
+            text-align: left;
+            padding: 10px;
+            transition: background-color 0.3s;
+            left: -250px;
+            width: 200px;
+
+        }
+        
+        .navbar-nav li:hover {
+            <!-- background-color: #3d566e; -->
+            
+
+        }
+        
+        .navbar-nav li a {
+            color: #663c3c;
+            text-decoration: none;
+            left: -600px;
+            <!-- width: 150px; -->
+
+        }
+        
+        .navbar-nav li.active {
+            background-color: #3d566e;
+            left: -250px;
+            width: 250px;
+
+        }
+        
+        /* Add more styles as needed */
+        
+        /* Add more styles as needed */
+        
+    </style>
+</head>
+<body id="myPage" data-target=".navbar" data-offset="60">
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#features">FEATURES</a></li>
+                    <li><a href="#users">USERS</a></li>
+                    <li><a href="#pricing">PRICING</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="login.html">LOGIN</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Your page content goes here -->
+
+    <!-- Add Bootstrap JS and jQuery scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
+    
